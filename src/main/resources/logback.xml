@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
+    <property name="mdc_log_pattern"
+              value="%d{YYYY-MM-dd HH:mm:ss.SSS} %5level %logger{0}:%line [%t] [%mdc] - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${mdc_log_pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <logger level="debug" name="org.springframework.cloud"/>
+    <logger name="io.fabric8.kubernetes.client" level="debug"/>
+
+    <!-- deactivate annoying warnings -->
+    <logger name="org.springframework.context.annotation.ConfigurationClassPostProcessor" level="error"/>
+    <logger name="com.netflix.config.sources.URLConfigurationSource" level="error"/>
+
+    <!-- print port at startup -->
+    <logger name="org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer" level="info"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
