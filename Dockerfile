@@ -18,9 +18,9 @@ ADD . /data/app/src
 WORKDIR /data/app/src
 RUN cp target/app.jar /data/app/bin/app.jar \
     && rm -rf /data/app/src /root/.m2/ \
-    && chown -R 1001:0 /opt/app-root
+    && chown -R 1001:0 /data/app
 
 USER 1001
 
-WORKDIR /opt/app-root
+WORKDIR /data/app
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","bin/app.jar"]

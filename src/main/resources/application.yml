@@ -16,3 +16,6 @@ endpoints:
   enabled: false
   routes:
     enabled: true
+
+zuul:
+  ignored-services: docker-registry, kubernetes, router, zuul
