@@ -12,15 +12,12 @@ RUN apk add --no-cache curl \
 
 ENV MAVEN_HOME /usr/share/maven
 
-RUN mkdir -p /data/app/bin /data/app/logs /data/app/config /data/app/src
-ADD . /data/app/src
+RUN mkdir -p /data/app/bin /data/app/logs /data/app/config
+ADD target/app.jar /data/app/bin/app.jar
 
-WORKDIR /data/app/src
-RUN cp target/app.jar /data/app/bin/app.jar \
-    && rm -rf /data/app/src /root/.m2/ \
-    && chown -R 1001:0 /data/app
+WORKDIR /data/app
+RUN chown -R 1001:0 /data/app
 
 USER 1001
 
-WORKDIR /data/app
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","bin/app.jar"]

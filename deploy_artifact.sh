@@ -7,7 +7,7 @@ APP_NAME=$2
 mvn clean verify package
 
 # flush k8s project
-oc delete bc,dc,service,route ${APP_NAME}
+oc delete bc,dc,service ${APP_NAME}
 
 # build & deploy
 oc adm policy add-cluster-role-to-user cluster-reader system:serviceaccount:${KUBERNETES_PROJECT_NAME}:default
