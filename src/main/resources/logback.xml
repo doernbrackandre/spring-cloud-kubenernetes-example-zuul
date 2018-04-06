@@ -11,12 +11,13 @@
         </encoder>
     </appender>
 
-    <logger level="debug" name="org.springframework.cloud"/>
+    <logger name="org.springframework.cloud" level="debug"/>
     <logger name="io.fabric8.kubernetes.client" level="debug"/>
 
     <!-- deactivate annoying warnings -->
     <logger name="org.springframework.context.annotation.ConfigurationClassPostProcessor" level="error"/>
     <logger name="com.netflix.config.sources.URLConfigurationSource" level="error"/>
+    <logger name="org.springframework.cloud.context.scope.GenericScope" level="OFF"/>
 
     <!-- print port at startup -->
     <logger name="org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer" level="info"/>

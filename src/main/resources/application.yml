@@ -1,4 +1,18 @@
 ---
 spring:
+  cloud:
+    kubernetes:
+      client:
+        namespace: ''
   application:
     name: zuul
+
+management:
+  context-path: /status
+  security:
+    enabled: false
+
+endpoints:
+  enabled: false
+  routes:
+    enabled: true
