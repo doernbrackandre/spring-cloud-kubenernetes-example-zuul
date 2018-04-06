@@ -14,6 +14,8 @@ management:
 
 endpoints:
   enabled: false
+  info:
+    enabled: true
   routes:
     enabled: true
 
