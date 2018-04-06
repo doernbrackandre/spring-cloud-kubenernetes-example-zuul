@@ -1,20 +1,16 @@
-package de.idealo.requestrouter.kube.configuration;
+package de.doernbrack.example.kubernetes.zuul.configuration;
 
-import io.fabric8.kubernetes.api.model.DoneableEndpoints;
-import io.fabric8.kubernetes.api.model.DoneableService;
-import io.fabric8.kubernetes.api.model.Endpoints;
-import io.fabric8.kubernetes.api.model.EndpointsList;
-import io.fabric8.kubernetes.api.model.Service;
-import io.fabric8.kubernetes.api.model.ServiceList;
+import io.fabric8.kubernetes.api.model.*;
 import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
 import io.fabric8.kubernetes.client.dsl.Resource;
 import io.fabric8.kubernetes.client.dsl.internal.EndpointsOperationsImpl;
 import io.fabric8.kubernetes.client.dsl.internal.ServiceOperationsImpl;
-import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.cloud.kubernetes.KubernetesClientProperties;
+
+import java.util.Map;
 
 @RequiredArgsConstructor
 public class ContextAwareKubernetesClient extends DefaultKubernetesClient {

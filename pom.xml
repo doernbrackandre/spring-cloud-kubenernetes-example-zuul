@@ -38,11 +38,17 @@
 			<groupId>org.springframework.retry</groupId>
 			<artifactId>spring-retry</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-kubernetes</artifactId>
-            <version>0.2.1.BUILD-SNAPSHOT</version>
-		</dependency>
+
+        <dependency>
+            <groupId>de.idealo.apigateway</groupId>
+            <artifactId>spring-cloud-starter-kubernetes-netflix</artifactId>
+            <version>1.0.20180316.132213</version>
+        </dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-kubernetes</artifactId>-->
+            <!--<version>0.2.1.BUILD-SNAPSHOT</version>-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
