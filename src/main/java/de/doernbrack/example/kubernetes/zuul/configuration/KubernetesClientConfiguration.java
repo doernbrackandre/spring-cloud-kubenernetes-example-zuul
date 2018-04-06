@@ -15,7 +15,7 @@ import java.util.Map;
 @Slf4j
 @Configuration
 @ConfigurationProperties("spring.cloud.kubernetes.discovery")
-public class KubernetesClientAutoConfiguration {
+public class KubernetesClientConfiguration {
 
     @Setter
     @Getter
